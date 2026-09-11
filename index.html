@@ -10,6 +10,9 @@
 <meta property="og:description" content="Onsite and roadside repair across Fort Worth and surrounding cities. Call or text 817-709-1357 for a price.">
 <meta property="og:url" content="https://daysmobilemechanics.com/">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://daysmobilemechanics.com/logo.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&family=Lora:ital@0;1&display=swap" rel="stylesheet">
@@ -80,8 +83,7 @@ header{
   background:linear-gradient(to bottom,rgba(0,0,0,.72),rgba(0,0,0,0));
 }
 .nav{display:flex;align-items:center;justify-content:space-between}
-.wordmark{font-weight:600;font-size:16px;letter-spacing:.06em;text-transform:uppercase}
-.wordmark span{font-weight:300;color:var(--slate)}
+.logo-img{height:52px;width:auto;mix-blend-mode:screen}
 .nav-cta{
   display:inline-block;
   background:rgba(255,255,255,.14);
@@ -205,6 +207,15 @@ section{padding:88px 0}
 .step h3{font-size:20px;font-weight:600;margin-bottom:10px}
 .step p{font-family:var(--serif);font-size:15px;line-height:1.5;letter-spacing:.011em;color:var(--stone)}
 
+/* job photo band */
+.job{background:var(--black);padding:88px 0 0}
+.job-img{
+  width:100%;max-height:560px;object-fit:cover;object-position:center 55%;
+  border-radius:8px;
+  border:1px solid var(--gray);
+}
+.job-cap{font-size:13px;color:var(--slate);margin-top:14px}
+
 /* fleet band */
 .fleet{background:var(--teal);padding:64px 0}
 .fleet-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
@@ -275,7 +286,7 @@ footer a:hover{color:var(--white)}
 
 <header>
   <div class="wrap nav">
-    <div class="wordmark">Day's <span>Mobile Mechanics</span></div>
+    <a href="#" aria-label="Day's Mobile Mechanics home"><img class="logo-img" src="logo.jpg" alt="Day's Mobile Mechanics"></a>
     <a class="nav-cta" href="tel:+18177091357">Call 817-709-1357</a>
   </div>
 </header>
@@ -366,6 +377,13 @@ footer a:hover{color:var(--white)}
         <p>Repair done where the vehicle sits. Ongoing work gets scheduled around you.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="job">
+  <div class="wrap">
+    <img class="job-img" src="photos/engine-bay.jpg" alt="Engine work in progress under the hood of a truck" loading="lazy">
+    <p class="job-cap">Under the hood on a recent job.</p>
   </div>
 </section>
 
