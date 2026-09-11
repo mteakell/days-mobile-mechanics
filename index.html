@@ -51,21 +51,22 @@
 :root{
   --black:#000000;
   --white:#ffffff;
-  --graphite:#070707;
-  --gray:#1c1c1c;
-  --fog:#e5e4e4;
-  --slate:#8d8d8d;
-  --stone:#494949;
-  --teal:#002934;
-  --ocean:#044152;
-  --accent:#2e7cc4;
+  --navy:#060e1c;
+  --graphite:#0a1a30;
+  --gray:#14294a;
+  --fog:#eef3f9;
+  --slate:#8fa3bd;
+  --stone:#42597e;
+  --teal:#0a2a55;
+  --ocean:#12447e;
+  --accent:#2286f0;
   --sans:'Mulish',system-ui,-apple-system,sans-serif;
   --serif:'Lora',Georgia,serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  background:var(--black);
+  background:var(--navy);
   color:var(--white);
   font-family:var(--sans);
   font-size:15px;
@@ -102,10 +103,10 @@ header{
   display:flex;flex-direction:column;justify-content:flex-end;
   position:relative;overflow:hidden;
   background:
-    linear-gradient(to bottom, rgba(0,0,0,.45) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.82) 100%),
-    radial-gradient(ellipse 90% 60% at 75% 10%, rgba(46,124,196,.18), transparent 60%),
+    linear-gradient(to bottom, rgba(4,10,22,.5) 0%, rgba(4,10,22,.4) 45%, rgba(4,10,22,.88) 100%),
+    radial-gradient(ellipse 90% 60% at 75% 10%, rgba(34,134,240,.25), transparent 60%),
     url('photos/hero.jpg') center 40%/cover no-repeat,
-    var(--black);
+    var(--navy);
   padding:140px 0 72px;
 }
 .hero-badge{
@@ -139,7 +140,7 @@ header{
   padding:17px 34px;border-radius:160px;
   transition:background .25s ease,transform .25s cubic-bezier(.165,.84,.44,1);
 }
-.btn-fill:hover{background:#3a8cd6;transform:translateY(-1px)}
+.btn-fill:hover{background:#4d9df5;transform:translateY(-1px)}
 .btn-ghost{
   display:inline-block;
   border:1px solid var(--white);color:var(--white);
@@ -164,7 +165,7 @@ section{padding:88px 0}
 .h2 strong{font-weight:600}
 
 /* services */
-.services{background:var(--black)}
+.services{background:var(--navy)}
 .svc-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px}
 .svc-side{font-family:var(--serif);font-size:15px;line-height:1.5;color:var(--slate);max-width:36ch}
 .svc-grid{
@@ -186,7 +187,7 @@ section{padding:88px 0}
   background:var(--teal);
   border-color:var(--ocean);
 }
-.svc-card.accent p{color:#a8c4cf}
+.svc-card.accent p{color:#9db8dd}
 .svc-more{font-size:14px;color:var(--slate);margin-top:24px}
 .svc-more a{color:var(--white);border-bottom:1px solid var(--stone);padding-bottom:1px}
 
@@ -240,27 +241,28 @@ section{padding:88px 0}
 .fleet-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:28px}
 .fleet h2{font-weight:300;font-size:clamp(26px,3.5vw,40px);letter-spacing:-.02em;line-height:1.1;max-width:24ch}
 .fleet h2 strong{font-weight:600}
-.fleet p{font-size:15px;color:#a8c4cf;margin-top:10px;max-width:48ch}
+.fleet p{font-size:15px;color:#9db8dd;margin-top:10px;max-width:48ch}
 
-/* service area */
-.area{background:var(--black)}
+/* service area, light section */
+.area{background:var(--white);color:var(--black)}
+.area .label{color:var(--stone)}
 .area-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-.area-copy{font-family:var(--serif);font-size:18px;line-height:1.5;letter-spacing:.011em;color:var(--fog);margin-top:24px;max-width:44ch}
+.area-copy{font-family:var(--serif);font-size:18px;line-height:1.5;letter-spacing:.011em;color:var(--stone);margin-top:24px;max-width:44ch}
 .cities{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
 .city{
-  border:1px solid var(--stone);
-  color:var(--white);
+  border:1px solid #c3d1e4;
+  color:var(--black);
   font-size:14px;font-weight:500;
   padding:11px 22px;border-radius:160px;
 }
-.city.hub{background:var(--white);color:var(--black);border-color:var(--white)}
-.area-note{font-size:13px;color:var(--slate);margin-top:22px}
+.city.hub{background:var(--accent);color:var(--white);border-color:var(--accent)}
+.area-note{font-size:13px;color:var(--stone);margin-top:22px}
 
 /* contact */
 .contact{
   background:
-    radial-gradient(ellipse 80% 70% at 50% 110%, rgba(4,65,82,.55), transparent 70%),
-    var(--black);
+    radial-gradient(ellipse 80% 70% at 50% 110%, rgba(18,68,126,.55), transparent 70%),
+    var(--navy);
   text-align:center;
   padding:110px 0;
 }
