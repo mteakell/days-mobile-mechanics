@@ -207,14 +207,33 @@ section{padding:88px 0}
 .step h3{font-size:20px;font-weight:600;margin-bottom:10px}
 .step p{font-family:var(--serif);font-size:15px;line-height:1.5;letter-spacing:.011em;color:var(--stone)}
 
-/* job photo band */
-.job{background:var(--black);padding:88px 0 0}
-.job-img{
-  width:100%;max-height:560px;object-fit:cover;object-position:center 55%;
-  border-radius:8px;
-  border:1px solid var(--gray);
+/* job photo band, full-bleed parallax */
+.job{
+  position:relative;
+  height:68vh;min-height:420px;max-height:720px;
+  overflow:hidden;
+  background:var(--black);
 }
-.job-cap{font-size:13px;color:var(--slate);margin-top:14px}
+.job-img{
+  position:absolute;left:0;top:-18%;
+  width:100%;height:136%;
+  object-fit:cover;object-position:center;
+  will-change:transform;
+}
+.job-shade{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.15) 40%, rgba(0,0,0,.35) 100%);
+}
+.job-cap{
+  position:absolute;left:0;right:0;bottom:34px;
+}
+.job-cap-inner{
+  display:inline-block;
+  background:rgba(0,0,0,.55);
+  border-radius:8px;
+  padding:12px 20px;
+  font-size:14px;color:var(--fog);
+}
 
 /* fleet band */
 .fleet{background:var(--teal);padding:64px 0}
@@ -381,9 +400,10 @@ footer a:hover{color:var(--white)}
 </section>
 
 <section class="job">
-  <div class="wrap">
-    <img class="job-img" src="photos/engine-bay.jpg" alt="Engine work in progress under the hood of a truck" loading="lazy">
-    <p class="job-cap">Under the hood on a recent job.</p>
+  <img class="job-img" src="photos/engine-bay.jpg" alt="Engine work in progress under the hood of a truck" loading="lazy">
+  <div class="job-shade"></div>
+  <div class="job-cap">
+    <div class="wrap"><span class="job-cap-inner">Under the hood on a recent job.</span></div>
   </div>
 </section>
 
@@ -438,6 +458,30 @@ footer a:hover{color:var(--white)}
     <div><a href="mailto:dmmechanics@yahoo.com">dmmechanics@yahoo.com</a> &nbsp;&middot;&nbsp; <a href="tel:+18177091357">817-709-1357</a></div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var img = document.querySelector('.job-img');
+  var section = document.querySelector('.job');
+  if(!img || !section) return;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var rect = section.getBoundingClientRect();
+    var vh = window.innerHeight;
+    if(rect.bottom < 0 || rect.top > vh) return;
+    var progress = (rect.top + rect.height/2 - vh/2) / (vh/2 + rect.height/2);
+    img.style.transform = 'translateY(' + (progress * -9) + '%)';
+  }
+  function onScroll(){
+    if(!ticking){ ticking = true; requestAnimationFrame(update); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll, {passive:true});
+  update();
+})();
+</script>
 
 </body>
 </html>
