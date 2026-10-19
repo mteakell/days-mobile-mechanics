@@ -10,9 +10,12 @@
 <meta property="og:description" content="Onsite and roadside repair across Fort Worth and surrounding cities. Call or text 817-709-1357 for a price.">
 <meta property="og:url" content="https://daysmobilemechanics.com/">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://daysmobilemechanics.com/logo.jpg">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<meta property="og:image" content="https://www.daysmobilemechanics.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&family=Lora:ital@0;1&display=swap" rel="stylesheet">
@@ -22,6 +25,8 @@
   "@type": "AutoRepair",
   "name": "Day's Mobile Mechanics",
   "url": "https://daysmobilemechanics.com/",
+  "logo": "https://www.daysmobilemechanics.com/assets/icon-512.png",
+  "image": "https://www.daysmobilemechanics.com/assets/og-image.png",
   "telephone": "+18177091357",
   "email": "dmmechanics@yahoo.com",
   "priceRange": "Call for pricing",
@@ -84,7 +89,8 @@ header{
   background:linear-gradient(to bottom,rgba(0,0,0,.72),rgba(0,0,0,0));
 }
 .nav{display:flex;align-items:center;justify-content:space-between}
-.logo-img{height:52px;width:auto;mix-blend-mode:screen}
+.logo-img{height:60px;width:auto;display:block}
+.logo-link{display:block}
 .nav-cta{
   display:inline-block;
   background:rgba(255,255,255,.14);
@@ -297,6 +303,7 @@ footer a{color:var(--fog)}
 footer a:hover{color:var(--white)}
 
 @media (max-width:820px){
+  .logo-img{height:52px}
   .area-inner{grid-template-columns:1fr}
   section{padding:64px 0}
   .hero{padding-bottom:56px}
@@ -307,7 +314,7 @@ footer a:hover{color:var(--white)}
 
 <header>
   <div class="wrap nav">
-    <a href="#" aria-label="Day's Mobile Mechanics home"><img class="logo-img" src="logo.jpg" alt="Day's Mobile Mechanics"></a>
+    <a class="logo-link" href="#" aria-label="Day's Mobile Mechanics home"><picture><source type="image/webp" srcset="assets/days-logo-white-600.webp 1x, assets/days-logo-white-1200.webp 2x"><img class="logo-img" src="assets/days-logo-white-600.png" srcset="assets/days-logo-white-600.png 1x, assets/days-logo-white-1200.png 2x" width="600" height="165" alt="Day's Mobile Auto Repair logo"></picture></a>
     <a class="nav-cta" href="tel:+18177091357">Call 817-709-1357</a>
   </div>
 </header>
